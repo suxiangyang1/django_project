@@ -121,3 +121,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# 指定静态文件存放的位置(如: static文件下的 bootstrap)
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static"),
+)
+
