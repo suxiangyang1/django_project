@@ -59,6 +59,15 @@ urlpatterns = [
 - {% block content %} {% endblock content %} 表面这里应该加入list.html中对应块的内容
 
 
+## 第三次提交
+> 文章页到详情页面的展示
+
+article-list/  ---->   views.article_list   ---->     list.html
+----->   点击article-detail/<int:id>/  ----->   将id传递给article/urls.py
+----->   通过<int:id> 传递给视图函数 article_detail()   
+------>   通过形参id 获取文章id的值, 得到需要获取文章的对象。
+
+
 
 
 
