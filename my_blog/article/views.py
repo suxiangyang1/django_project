@@ -2,6 +2,8 @@ from django.shortcuts import render
 # 导入HttpResponse 模块
 from django.http import HttpResponse
 from .models import ArticlePost
+# 引入markdown模块
+import markdown
 
 
 # 视图函数
@@ -29,10 +31,21 @@ context内容添加进模板, 通过浏览器实现
 """
 
 
-# 文章详情
+# 文章详情(引用markdown来对详情页进行改写)
 def article_detail(request, id):
     # 取出相应的文章
     article = ArticlePost.objects.get(id=id)
+
+    # 将markdown 语法渲染成html样式
+    # markdown.markdown语法接收两个参数: 第一个参数是: 需要渲染的正文 ; 第二个参数载入了常用的语法扩展。
+    article.body = markdown.markdown(article.body,
+        extensions=[
+            # 包含 缩写 表格等常用扩展
+            'markdown.extensions.extra',
+            # 语法高亮
+            'markdown.extensions.codehilite',
+        ])
+
     # 需要传递给模板的对象
     context = {'article': article}
     # 载入模板, 并返回context对象

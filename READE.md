@@ -68,7 +68,9 @@ article-list/  ---->   views.article_list   ---->     list.html
 ------>   通过形参id 获取文章id的值, 得到需要获取文章的对象。
 
 
-
+## 第四次提交
+> 如果使用pip install Pygments  报错
+>  尝试使用 pip --default-timeout=100 install 库名称 -i http://pypi.douban.com/simple/ --trusted-host pypi.douban.com 
 
 
 

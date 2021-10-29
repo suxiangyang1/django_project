@@ -18,7 +18,9 @@
         <div class="col-12 alert alert-success">作者：{{ article.author }}</div>
         <!-- 文章正文 -->
         <div class="col-12">
-            <p>{{ article.body }}</p>
+<!--             在article.body 后加上 |safe 过滤器-->
+<!--             | 是过滤器的写法, |safe 就类似给article.body 贴了一个标签, 表示这一段不需要进转义了-->
+            <p>{{ article.body|safe }}</p>
         </div>
     </div>
 </div>
