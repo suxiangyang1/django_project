@@ -77,6 +77,19 @@ article-list/  ---->   views.article_list   ---->     list.html
 如果报错也不要慌张，开发过程一定是曲折的，耐心看看Django给出的错误提示，线索就在其中.
 ```
 
+## 第五次提交
+
+> 主要是CSRF令牌, 防范此类攻击原来如下
+>  下载layer 的地址: http://www.h-ui.net/lib/layer.js.shtml
+
+- 当用户访问django站点时， django 反馈给用户的表达中有一个隐含字段 csrf_token ，这个值是在服务器端随机生成的，每次都不一样
+- 在后端处理POST请求前, django 会校验请求的cookie 里的csrf_token 和表单里的csrf_token 是否一致。请求合法通过 否则返回403
+
+改变后的安全链接是 ----->   点击删除文章链接,弹出layer 弹窗  ----->    弹窗不在发起GET请求,而实通过Jquery选择器找到的
+隐藏表单发起POST请求, 并携带了csrf 令牌 避免了csrf 攻击(默认配置下所有的 POST 请求都由 Django 中间件帮我们验证)
+
+
+
 
 
 
