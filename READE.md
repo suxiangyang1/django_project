@@ -72,7 +72,10 @@ article-list/  ---->   views.article_list   ---->     list.html
 > 如果使用pip install Pygments  报错
 >  尝试使用 pip --default-timeout=100 install 库名称 -i http://pypi.douban.com/simple/ --trusted-host pypi.douban.com 
 
-
+```text
+大功告成了，不要着急，先喝口水，万一有bug又得忙活半天了。
+如果报错也不要慌张，开发过程一定是曲折的，耐心看看Django给出的错误提示，线索就在其中.
+```
 
 
 
