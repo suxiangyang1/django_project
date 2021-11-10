@@ -25,4 +25,5 @@ urlpatterns = [
     # include 将路径分发给下一步处理
     # namespace 可以保证反查到唯一的url, 即使不同的的app 使用了相同的url 后面会讲到
     path('article/', include('article.urls', namespace='article')),
+    path('userprofile/', include('userprofile.urls', namespace='userprofile')),
 ]
